@@ -12,6 +12,7 @@ export default function Header() {
         <Link to='/plant-shopping/landing'>🪴 PlantShop</Link></div>
       <nav style={styles.nav}>
         <Link to="/plant-shopping/landing" style={styles.link}>Home</Link>
+        <Link to="/plant-shopping/about-us" style={styles.link}>About</Link>
         <Link to="/plant-shopping/product" style={styles.link}>Product</Link>
         <Link to="/plant-shopping/cart" style={styles.link}>[ 🛒 {totalCartItem != 0 ? totalCartItem : ''}]
         </Link>

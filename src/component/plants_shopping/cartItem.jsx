@@ -9,7 +9,6 @@ export default function cartItem() {
     const dispatch = useDispatch();
     
     const carts = useSelector((state) => state.plant.carts)
-    console.log(carts)
     const totalCartAmont = useSelector((state) => state.plant.totalCartPrice)
     const navigate = useNavigate(); 
     const handleChange = (id, change) => {

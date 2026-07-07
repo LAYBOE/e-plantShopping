@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Item from './item';
 import Header from './header';
 
-function PlantProduct() {
+function ProductList() {
     const navigate = useNavigate(); 
 
     return (
@@ -27,4 +27,4 @@ function PlantProduct() {
     );
 }
 
-export default PlantProduct;
+export default ProductList;

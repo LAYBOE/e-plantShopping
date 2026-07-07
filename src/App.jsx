@@ -7,9 +7,10 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import PlantLanding from './component/plants_shopping/landing'
-import PlantProduct  from './component/plants_shopping/product'
 import PlantCart from './component/plants_shopping/cart'
 import Checkout from './component/plants_shopping/checkout'
+import AboutUs from './component/plants_shopping/about_us'
+import ProductList from './component/plants_shopping/product_list'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,7 +20,8 @@ function App() {
      <Router>
       <Routes>
         <Route path="/plant-shopping/landing" element={<PlantLanding />} />
-        <Route path="/plant-shopping/product" element={<PlantProduct />} />
+        <Route path="/plant-shopping/product" element={<ProductList />} />
+        <Route path="/plant-shopping/about-us" element={<AboutUs />} />
         <Route path="/plant-shopping/cart" element={<PlantCart />} />
         <Route path="/plant-shopping/checkout" element={<Checkout />} />
       </Routes>
