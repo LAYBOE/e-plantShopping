@@ -37,7 +37,7 @@ export const plantShoppingSlice = createSlice({
   name: 'plant',
   initialState,
   reducers: {
-    addToCart: (state, action) => {
+    addItem: (state, action) => {
       const product = action.payload;
       const exists = state.carts.some(item => item.id === product.id);
       if (!exists) {
@@ -45,7 +45,7 @@ export const plantShoppingSlice = createSlice({
         state.totalCartPrice = calcuateTotalCartPrice(state.carts)
       }
     },
-    updateCartItem:(state, action) => {
+    updateQuantity:(state, action) => {
       const { id, change } = action.payload;
   
       const cartItem = state.carts.find((r) => r.id === id) || [];
@@ -55,7 +55,7 @@ export const plantShoppingSlice = createSlice({
         state.totalCartPrice = calcuateTotalCartPrice(state.carts)
       }
     },
-    removeFromCart: (state, action) => {
+    removeItem: (state, action) => {
       state.carts = state.carts.filter(item => item.id !== action.payload.id)
       state.totalCartPrice = calcuateTotalCartPrice(state.carts)
 
@@ -63,6 +63,6 @@ export const plantShoppingSlice = createSlice({
   },
 });
 
-export const { addToCart, removeFromCart, updateCartItem} = plantShoppingSlice.actions;
+export const { addItem, removeItem, updateQuantity} = plantShoppingSlice.actions;
 
 export default plantShoppingSlice.reducer;

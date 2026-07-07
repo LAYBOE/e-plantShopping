@@ -1,26 +1,35 @@
 
 import { useSelector, useDispatch } from 'react-redux';
-import Header from './header';
+import Header from './Header';
 import { useNavigate } from 'react-router-dom';
-import { removeFromCart, updateCartItem } from '../../store/plantShoppingSlice';
+import { removeItem, updateQuantity } from '../../store/plantShoppingSlice';
 
-export default function cartItem() {
+export default function CartItem() {
 
     const dispatch = useDispatch();
     
     const carts = useSelector((state) => state.plant.carts)
     const totalCartAmont = useSelector((state) => state.plant.totalCartPrice)
     const navigate = useNavigate(); 
+
     const handleChange = (id, change) => {
-        dispatch(updateCartItem({ id, change: change }));
+        dispatch(updateQuantity({ id, change: change }));
     };
 
     const handleRemove = (id) => {
-        dispatch(removeFromCart({id}) )
+        dispatch(removeItem({id}) )
     }
 
+ 
     return (
         <>
+        <main>
+            {totalCartAmont === 0 ? (
+                <p className="text-center text-gray-500 mt-8 font-medium pt-12">
+                Cart is empty 🛒
+                </p>
+            ) : (
+                  <>
             <p className='py-5 text-sm font-bold'>Total Cart Amount: ${totalCartAmont} </p>
             <div className='grid grid-cols-1 justify-items-center gap-1 w-full'>
                 {carts.map((cart) => { 
@@ -74,6 +83,9 @@ export default function cartItem() {
                     Checkout
                 </button>
             </div>
+        </>
+            )}
+        </main>
         </>
     )
 }

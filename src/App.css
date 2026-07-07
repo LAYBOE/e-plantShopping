@@ -1,3 +1,7 @@
+@utility bg-plant-bg {
+  background-image: url('./assets/plant/background-landing.jpg')
+}
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;
