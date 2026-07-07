@@ -13,8 +13,8 @@ Make sure you have [Node.js](https://nodejs.org) installed (version 18 or higher
 ### 1. Clone the Project
 Open your terminal and navigate to your project folder, or run the clone command if it is hosted on Git:
 ```bash
-git clone <your-repository-url>
-cd Plant-Shopping
+git clone https://github.com/LAYBOE/plant_shopping.git
+cd plant_shopping
 ```
 
 ### 2. Install Dependencies
